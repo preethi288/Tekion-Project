@@ -1,0 +1,297 @@
+/* *{
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+}
+
+.body {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+}
+.emoji{
+    font-size: 10rem;
+    cursor: pointer;
+    user-select: none;
+    margin-left: 50px;
+}
+
+.closed{
+    display: none;
+}
+.open{
+    display: none;
+}
+.active{
+    display: block;
+} */
+
+/* 
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+#info{
+    display: grid;
+    grid-template-columns:1fr 1fr;
+}
+
+#info div{
+    padding: 30px;
+    background-color: rgb(158, 65, 235);
+    margin: 0.5rem;
+    border-radius: 10px;
+    color: white;
+    font-size: 1.2rem;
+    text-align: center;
+
+} */
+
+/* *{
+    margin: 0;
+    padding: 0;
+}
+
+.main{
+    width: 100%; 
+
+}
+.navbar{
+    height: 55px;
+    width:1200px;
+    margin:auto;
+    background-color: burlywood;
+}
+
+.icon{
+    width: 10px;
+    color: aliceblue;
+    height: 50px;
+}
+
+.menu{
+    width: 400px;
+    float: left;
+    height: 70px;
+}
+
+ul{
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul li {
+    margin-left: 20px;
+    margin-right: 20px;
+    text-decoration: none;
+    list-style: none;
+
+}
+
+ul li a{
+    color: cornsilk;
+    transition: 0.4s ease-in-out;
+}
+
+ul li a:hover{
+    color: darkkhaki;
+
+}
+
+.content{
+    width: 1400px;
+    height: auto;
+    margin: auto;
+    color: white;
+    position: relative;
+
+} */
+
+@font-face {
+    font-family: Lato;
+    src: url(https://fonts.google.com/specimen/Lato);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* .container{
+    width: 100%;
+    padding: 0 150;
+    margin: auto;
+}
+
+.navbar{
+    width:1800px;
+    height: 300px;
+    margin: auto;
+    background-color: darkblue;
+}
+
+.head{
+    max-width: 1250px;
+    margin: auto;
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.head >div{
+    margin: 40px;
+}
+
+.pic{
+    flex:1 1 0
+}
+
+.inf{
+    flex: 3 1 0;
+    color: white;
+}
+
+.offer{
+    flex:1 1 0;
+    color: white;
+}
+
+.search{
+    display: flex;
+    padding-top: 20px;
+}
+.srch{
+    flex:2 1 0;
+
+}
+.check{
+    flex:1 1 0;
+
+}
+.fav{
+    flex:1 1 0;
+
+}
+
+.main{
+    width:1800px;
+    margin: auto;
+    background-color: lightblue;
+}
+
+.middle{
+    max-width: 1050px;
+    margin: auto;
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.middle >div{
+    margin: 40px;
+}
+.sidebar{
+    flex:1 1 0;
+
+}
+.body{
+    flex:3 1 0;
+
+}
+.right{
+    flex:1 1 0;
+
+} */
+
+/* display property to grid and added three columns and two rows */
+
+.grid-container{
+    display: grid;
+    justify-content:center;
+    grid-template-columns: 20% 40% 20%;
+    align-items: center;
+    border: 1px solid black;
+    margin: auto;
+    padding: 50px;
+    grid-gap: 60px 50px
+
+}
+
+.pic{
+    background-color: burlywood;
+}
+.inf{
+    background-color: burlywood;
+}
+
+.offer{
+    background-color: burlywood;
+}
+
+
+/* Each area is given a unique name */
+
+/* .pic{
+    grid-area: pic;
+}
+
+.inf{
+    grid-area: inf;
+}
+.offer{
+    grid-area:offer;
+}
+
+.sidebar{
+    grid-area:sidebar;
+}
+
+.body{
+    grid-area:body;
+}
+
+.right{
+    grid-area: right;
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
