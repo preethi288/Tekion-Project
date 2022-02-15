@@ -1,297 +1,328 @@
-/* *{
-    box-sizing: border-box;
-    margin:0;
-    padding: 0;
-}
-
-.body {
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-
-}
-.emoji{
-    font-size: 10rem;
-    cursor: pointer;
-    user-select: none;
-    margin-left: 50px;
-}
-
-.closed{
-    display: none;
-}
-.open{
-    display: none;
-}
-.active{
-    display: block;
-} */
-
-/* 
 *{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin:0;
+    padding:0;
+    /* box-sizing: border-box; */
+    transition: all .1s linear;
 }
 
-body{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+:root{
+    --green:#27ae60;
+    --black:#192a56;
+    --light-color:#666;
+    --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
 }
-
-#info{
-    display: grid;
-    grid-template-columns:1fr 1fr;
-}
-
-#info div{
-    padding: 30px;
-    background-color: rgb(158, 65, 235);
-    margin: 0.5rem;
-    border-radius: 10px;
-    color: white;
-    font-size: 1.2rem;
-    text-align: center;
-
-} */
-
-/* *{
-    margin: 0;
-    padding: 0;
-}
-
-.main{
-    width: 100%; 
-
-}
-.navbar{
-    height: 55px;
-    width:1200px;
-    margin:auto;
-    background-color: burlywood;
-}
-
-.icon{
-    width: 10px;
-    color: aliceblue;
-    height: 50px;
-}
-
-.menu{
-    width: 400px;
-    float: left;
-    height: 70px;
-}
-
-ul{
-    float: left;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-ul li {
-    margin-left: 20px;
-    margin-right: 20px;
-    text-decoration: none;
-    list-style: none;
-
-}
-
-ul li a{
-    color: cornsilk;
-    transition: 0.4s ease-in-out;
-}
-
-ul li a:hover{
-    color: darkkhaki;
-
-}
-
-.content{
-    width: 1400px;
-    height: auto;
-    margin: auto;
-    color: white;
-    position: relative;
-
-} */
 
 @font-face {
     font-family: Lato;
     src: url(https://fonts.google.com/specimen/Lato);
 }
 
-*{
-    margin: 0;
-    padding: 0;
+html{
+   overflow-x: hidden;
+   /* scroll-padding-top: 5.5rem; */
+   scroll-behavior: smooth;
 }
 
-/* .container{
-    width: 100%;
-    padding: 0 150;
-    margin: auto;
+header{
+    position: relative;
+    left: 0;right: 0;
+    z-index: 1000;
+    
 }
 
-.navbar{
-    width:1800px;
-    height: 300px;
-    margin: auto;
-    background-color: darkblue;
-}
-
-.head{
-    max-width: 1250px;
-    margin: auto;
-    padding-top: 20px;
+header .navbar{
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content:space-around;
+    box-shadow: var(--box-shadow);
+    padding: 1.0rem 0;
 }
 
-.head >div{
-    margin: 40px;
-}
-
-.pic{
-    flex:1 1 0
-}
-
-.inf{
-    flex: 3 1 0;
-    color: white;
-}
-
-.offer{
-    flex:1 1 0;
-    color: white;
-}
-
-.search{
+.le{
     display: flex;
-    padding-top: 20px;
+    align-items: center;
+    justify-content: space-evenly;
+    cursor: pointer;
 }
-.srch{
-    flex:2 1 0;
 
-}
-.check{
-    flex:1 1 0;
-
-}
-.fav{
-    flex:1 1 0;
+header .navbar .left >span{
+    margin: 0 3px;
+    
 
 }
 
-.main{
-    width:1800px;
-    margin: auto;
-    background-color: lightblue;
+header .navbar .left .loc{
+    color: rgb(82, 78, 78);
+    font-weight: bolder;
+    text-decoration: underline;
+}
+header .navbar .left .click{
+    color: #93959f;
+
+}
+header .navbar .left .icon{
+    font-size: 1.5rem;
+}
+
+header .navbar .left .loc:hover,
+header .navbar .left .click:hover,
+header .navbar .left .icon
+{
+    color: orange;
+
+}
+
+header .navbar ,left{
+    margin-left: 10px;
+}
+
+header .navbar .right {
+    display: flex;
+
+}
+
+header .navbar .right >div{
+    display: flex;
+    margin: 0 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    font-weight: lighter;
+}
+
+header .navbar .right .k1 .k2 .k3 >span{
+    display: flex;
+    margin-right: 5px;
+}
+header .navbar .right >i{
+    margin:5px;
+
+}
+
+.le >a{
+    font-size: 1.2rem;
+}
+
+.navbar .le .i{
+    content: url('https://api.iconify.design/uil/swiggy.svg');
+    height: 60px;
+    width: 50px;
+
+}
+
+.mid{
+    background: rgb(39, 35, 36);
+    position: relative;
+    /* top: 100%;left: 0;right: 0; */
+    margin-top:1.2rem;
+    height: 250px;
 }
 
 .middle{
-    max-width: 1050px;
+    display: table;
+    max-width: 1200px;
+    min-width: 1200px;
     margin: auto;
-    padding-top: 20px;
+    color: white;
+
+}
+
+.middle .pic{
+    display: table-cell;
+    vertical-align: middle;
+    max-width: 230px;
+  
+}
+.middle .pic .picture{
+    margin-top: 30px;
+
+}
+.im{
+    border-radius: 0.5rem;
+    width: 70%;
+
+}
+
+.middle .inf{
+    display: table-cell;
+    vertical-align: middle;
+
+}
+
+.middle .inf .kitch .a1>h1{
+    /* line-height: 30px; */
+    font-weight: lighter;
+    margin: 10px 0;
+}
+.middle .inf .kitch .a2{
+    margin:10px 0;
+}
+
+.middle .inf .kitch{
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
 }
 
-.middle >div{
-    margin: 40px;
-}
-.sidebar{
-    flex:1 1 0;
+.inf .rat{
+    display:flex;
+    /* justify-content: space-between; */
+    margin-top: 25px;
 
-}
-.body{
-    flex:3 1 0;
-
-}
-.right{
-    flex:1 1 0;
-
-} */
-
-/* display property to grid and added three columns and two rows */
-
-.grid-container{
-    display: grid;
-    justify-content:center;
-    grid-template-columns: 20% 40% 20%;
-    align-items: center;
-    border: 1px solid black;
-    margin: auto;
-    padding: 50px;
-    grid-gap: 60px 50px
 
 }
 
-.pic{
-    background-color: burlywood;
+.r1{
+    padding-right: 20px;
 }
-.inf{
-    background-color: burlywood;
+.r2{
+    padding-right: 20px;
+    /* padding-left: 20px; */
 }
-
-.offer{
-    background-color: burlywood;
-}
-
-
-/* Each area is given a unique name */
-
-/* .pic{
-    grid-area: pic;
+.r3{
+    padding-right: 20px;
+    /* padding-left: 20px; */
 }
 
-.inf{
-    grid-area: inf;
-}
-.offer{
-    grid-area:offer;
-}
 
-.sidebar{
-    grid-area:sidebar;
+
+.r11{
+    display: flex;
+    flex-direction: column;
+    /* margin-right: 40px; */
+
 }
 
-.body{
-    grid-area:body;
+.r4{
+    font-size: 1.1rem;
+}
+.r5{
+    font-weight: 100;
 }
 
-.right{
-    grid-area: right;
-} */
+.middle .offer{
+    display: table-cell;
+    vertical-align: middle;
+    max-width: 130px;
+    line-height:2rem;
+}
 
+.menu{
+    display: flex;
+    max-width: 1200px;
+    min-width: 1200px;
+    margin: 0 auto;
+}
 
+.menu .m12{
+    display: flex;
+    width: 902px;
+}
 
+.menu .m12 .m1{
+    width: 254px;
+    align-self: flex-start;
+    margin-top: 21px;
+    
+}
 
+.menu .m12 .categories >li{
+    list-style-type: none;
+    font-size: 1.2rem;
+    line-height: 1.9rem;
+    font-weight:lighter;
+    /* float: right; */
+    display: block;
+    
+}
+.categories a{
+    color: black;
+    text-decoration: none;
 
+}
+.categories a:hover,
+.categories a.active{
+    color: orange;
+}
 
+.menu .m3{
+    margin-top: 21px;
+}
 
+.menu .m3>h1{
+    font-weight: lighter;
+    font-size: 1.5rem;
+    color: #93959f;
+}
 
+.menu .m3 .ima{
+    margin-top:35px;
+}
 
+.menu .m3 .ima .img{
+    width: 100%;
+    height: 212px;
+    
+}
 
+.menu .good{
+    color: #93959f;
+    margin-top: 15px;
+    font-size: 16px;
+    max-width: 218px;
+}
 
+.m2 .m21{
+    margin-top: 15px;
+    line-height: 35px;
+}
 
+.m22 .first .l11{
+    display: flex;
+   
+}
 
+.m22 .first .l11>span{
+    margin-right: 10px;
+    color: orange;
+}
 
+.m2 .mid1{
+    /* width: 648px; */
+    /* flex-grow: 1; */
+    padding: 30px 55px 100px;
+}
 
+.m22 .first .l2 >img{
+    width:140px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-left: 10px;
 
+}
 
+.m22 .first{
+    display: flex;
+    height: 180px;
+    margin-top: 30px;
+}
 
+.m22 .first .l2 >h1{
+    font-size: 1.2rem;
+    font-weight: lighter;
+    color: #5c5d61;
+}
 
+.m22 .first .l1>div{
+    padding: 6px 0;
+}
 
+.first .l1 .l4{
+    color: #93959f;
+    line-height: 1.5rem;
+}
 
+.m22>hr{
+    border: .6px dotted gray;
+}
 
 
 
