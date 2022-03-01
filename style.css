@@ -252,6 +252,25 @@ right: 30px;
 
 }
 
+.additem{
+    position: relative;
+    left: 435px;
+    bottom: 45px;
+    
+}
+
+.addbtn{
+    padding: 8px 30px;
+    color: #60b246;
+    background-color: white;
+    border: solid .5px black;
+}
+.addbtn:hover{
+    background-color: #60b246;
+    color: white;
+}
+
+
 .o1{
     padding-top: 25px;
     padding-left: 20px;
@@ -343,18 +362,18 @@ input[type=search]::placeholder{
 
 .menu{
     display: flex;
-    max-width: 1200px;
-    min-width: 1200px;
+    max-width: 1400px;
+    min-width: 1400px;
     margin: 0 auto;
 }
 
 .menu .m12{
     display: flex;
-    width: 902px;
+    width: 932px;
 }
 
 .menu .m12 .m1{
-    width: 274px;
+    width: 304px;
     align-self: flex-start;
     margin-top: 50px;
     margin-right: 20px;
@@ -394,6 +413,8 @@ input[type=search]::placeholder{
 
 .menu .m3{
     margin-top: 50px;
+    margin-left: 30px;
+    display: none;
 }
 
 .menu .m3>h1{
@@ -410,6 +431,20 @@ input[type=search]::placeholder{
     width: 100%;
     height: 212px;
     
+}
+
+.m4{
+    margin-top: 55px;
+
+   
+}
+
+.mm{
+    /* display: none; */
+}
+
+.m42{
+    display: flex;
 }
 
 .menu .good{
@@ -474,4 +509,51 @@ input[type=search]::placeholder{
 }
 
 
+.m41 input {
+    width: 70px;
+    font-size: 15px;
+    font-weight: 800;
+    color:#60b246 ;
+    z-index: 1;
+    height: 25px;
+    margin: 5px;
+    border: 1px solid black;
+    text-align: center;
+  }
+
+ .m41 button{
+     padding: 5px;
+     color: white;
+     background-color: #60b246;
+ }
+
+ .m41 tr td{
+     font-size: 1.0rem;
+     padding: 5px;
+ }
+ .m42{
+     width: 300px;
+     display: flex;
+     margin-left: 20px;
+     margin-top: 20px;
+ }
+ .m43{
+     font-size: 1.5rem;
+     margin-left: 5px;
+     position: relative;
+     bottom: 3px;
+    }
+      
+.m41 .w1{
+    width: 140px;
+}
+
+.m41 .w2{
+    width: 30px;
+
+}
+
+.m41 .a1{
+    width: 50px;
+}
 
