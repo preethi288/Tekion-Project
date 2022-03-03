@@ -140,7 +140,6 @@ var shoppingCart = (function () {
 
 
 var arr1 = shoppingCart.listCart();
-console.log(itemlist);
 
 //Mainmenu function 
 
@@ -276,7 +275,6 @@ $('.addbtn4').click(function (event) {
 //Display Cart 
 function displayCart() {
     var cartArray = shoppingCart.listCart();
-    console.log(cartArray);
     var output = "<h1>CART</h1>";
     var out = '';
     for (var i in cartArray) {
@@ -400,6 +398,12 @@ function checkbox(){
     }
     })
 }
+
+//Checkout 
+$('.m46').on('click',function(event){
+    console.log(shoppingCart.listCart());
+})
+
 
 //If Cart empty then displaying placeholder
 
