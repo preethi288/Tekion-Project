@@ -265,7 +265,17 @@ right: 30px;
     background-color: white;
     border: solid .5px black;
     position: relative;
-    bottom: 25px;
+    /* bottom: 8px; */
+    z-index: 100;
+}
+.addbtn1{
+    position: relative;
+    bottom: 5px;
+}
+
+.addbtn4{
+    position: relative;
+    bottom: 30px;
 }
 .addbtn1:hover,.addbtn2:hover,.addbtn3:hover,.addbtn4:hover{
     background-color: #60b246;
@@ -496,6 +506,8 @@ input[type=search]::placeholder{
     border-radius: 8px;
     cursor: pointer;
     margin-left: 10px;
+    position: relative;
+    top: 20px;
 
 }
 
@@ -588,15 +600,19 @@ input[type=search]::placeholder{
 .input-group{
     display: flex;
     position: relative;
-    bottom: 25px;
+    bottom: 10px;
     z-index: 5;
     border-radius: 10px;
 }
+
+
 .input-group1{
     display: flex;
     z-index: 5;
     border: 1px solid rgba(0,0,0,.1);
 }
+
+
 
 .m41 .delete-item{
     font-size: 10px;

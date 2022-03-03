@@ -1,4 +1,5 @@
-sidemenu = ['Recommended', 'Thali', 'Platters', 'Starters', 'Rice Bowls'];
+import {itemlist} from "./Models/ItemList.js";
+import {sidemenu} from "./Models/ItemData.js";
 
 var html = '';
 
@@ -11,111 +12,10 @@ for (var i = 0; i < sidemenu.length; i++) {
 document.querySelector(".categories").innerHTML = html;
 
 
-const menu = [
-    {
-        id: 1,
-        isVeg: true,
-        isBestseller: true,
-        Name: "Premium Butter Chicken Roti Thali",
-        Price: 283,
-        Descr: "Butter Chicken , 2 nos roti served with pickle , raita ,gulab jamun, 2 Pcs Chicken Tikka"
-    },
-    {
-        id: 2,
-        isVeg: false,
-        isBestseller: true,
-        Name: "Chilli Coriander Mutton Kulcha",
-        Price: "383",
-        Descr: "Manchuria, Gobi ,served with Salad, spoons,Delectable Gobi dish prepared in a thick and rich flavourful gravy."
-    },
-    {
-        id: 3,
-        isVeg: true,
-        isBestseller: false,
-        Name: "Premium Butter Chicken Pulao Thali",
-        Price: "483",
-        Descr: "Tender pieces of cottage cheese marinated and prepared in a delectable gravy."
-    },
-    {
-        id: 4,
-        isVeg: false,
-        isBestseller: true,
-        Name: "Premium Paneer Butter Masala Roti",
-        Price: "213",
-        Descr: "A curry based cottage cheese dish made with fresh spinach and spices,Classic creamy lentil dish made with whole black lentils, spices, butter and cream."
-    },
-]
-
-//ItemBuilder function
-
-let items = function (id, Name, Prices, isVeg, isBestsell, Descr) {
-    this.id = id;
-    this.Name = Name;
-    this.isVeg = isVeg;
-    this.Prices = Prices;
-    this.isBestsell = isBestsell;
-    this.Descr = Descr;
-}
-
-let itemBuilder = function () {
-    let id = 0;
-    let Name = "";
-    let isVeg = false;
-    let Prices = 0;
-    let isBestsell = false;
-    let Descr = "";
-
-    return {
-        Setid: function (i) {
-            this.id = i;
-            return this;
-        },
-        SetName: function (n) {
-            this.Name = n;
-            return this;
-        },
-        SetPrice: function (p) {
-            this.Prices = p;
-            return this;
-        },
-        SetisVeg: function (v) {
-            this.isVeg = v;
-            return this;
-        },
-        SetisBestseller: function (t) {
-            this.Bestsell = t;
-            return this;
-        },
-        SetDescr: function (de) {
-            this.Descr = de;
-            return this;
-        },
-        build: function () {
-            return new items(this.id, this.Name, this.Prices, this.isVeg, this.isBestsell, this.Descr);
-        },
-    }
-
-}
-
-//Setting values and pushing to itemlist
-
-const itemlist = [];
-
-for (var i = 0; i < menu.length; i++) {
-    itemlist.push(new itemBuilder().Setid(menu[i].id)
-        .SetName(menu[i].Name)
-        .SetPrice(menu[i].Price)
-        .SetisVeg(menu[i].isVeg)
-        .SetisBestseller(menu[i].isBestseller)
-        .SetDescr(menu[i].Descr)
-        .build());
-
-}
-
 //Shopping Cart functionality
 
 var shoppingCart = (function () {
-    cart = [];
+    var cart = [];
 
     // Constructor
     function Item(id, name, price, count) {
@@ -221,10 +121,10 @@ var shoppingCart = (function () {
     // List cart
     obj.listCart = function () {
         var cartCopy = [];
-        for (i in cart) {
-            item = cart[i];
-            itemCopy = {};
-            for (p in item) {
+        for (var i in cart) {
+            let item = cart[i];
+            let itemCopy = {};
+            for (var p in item) {
                 itemCopy[p] = item[p];
 
             }
@@ -240,13 +140,12 @@ var shoppingCart = (function () {
 
 
 var arr1 = shoppingCart.listCart();
+console.log(itemlist);
 
 //Mainmenu function 
 
-
 function main_menu() {
-
-    for (let x in menu) {
+    for (let x in itemlist) {
         let item = $("<div></div>").addClass("first")
         $(".mn").append(item);
 
@@ -258,9 +157,9 @@ function main_menu() {
 
 
         var item10;
-        if (menu[x].isVeg == true) {
+        if (itemlist[x].isVeg == true) {
             item10 = $('<img/>', {
-                src: "veg-icon.png",
+                src: "images/veg-icon.png",
                 alt: 'veg',
                 class: 'ic',
                 dataVal: 'veg'
@@ -268,7 +167,7 @@ function main_menu() {
         }
         else {
             item10 = $('<img/>', {
-                src: "non-veg icon.png",
+                src: "images/non-veg icon.png",
                 alt: 'icon',
                 class: 'ic',
                 dataVal: 'nonVeg'
@@ -277,15 +176,17 @@ function main_menu() {
         let item4 = $("<span></span>").append(item10);
 
         var item19;
-        if (menu[x].isBestseller == true) {
+        var item56;
+        if (itemlist[x].isBestsell == true) {
             item19 = $('<img/>', {
-                src: "star-icon.png",
+                src: "images/star-icon.png",
                 class: 'st',
                 dataVal: 'star'
             })
             item56=$("<span></span>").addClass("fre").text("BestSeller")
         }
-        let item5 = $("<span></span>").append(item19).append(item56);
+        let item5 ;
+        item5= $("<span></span>").append(item19).append(item56);
 
 
         item3.append(item4);
@@ -293,9 +194,9 @@ function main_menu() {
 
 
 
-        let item6 = $("<div></div>").addClass("l2").text(menu[x].Name);
-        let item7 = $("<div></div>").addClass("l3").text(menu[x].Price)
-        let item8 = $("<div></div>").addClass("l4").text(menu[x].Descr);
+        let item6 = $("<div></div>").addClass("l2").text(itemlist[x].Name);
+        let item7 = $("<div></div>").addClass("l3").text("Rs. "+itemlist[x].Prices);
+        let item8 = $("<div></div>").addClass("l4").text(itemlist[x].Descr);
 
 
         item2.append(item6);
@@ -305,7 +206,7 @@ function main_menu() {
 
         let item9 = $('<img/>', {
             class: 'l2',
-            src: "food1.jpeg",
+            src: "images/food1.jpeg",
             alt: 'food-image'
         });
         let item11 = $("<div></div>").addClass("l2");
@@ -315,11 +216,11 @@ function main_menu() {
         let item12 = $("<div></div>").addClass("additem");
         item2.append(item12);
 
-        let item13 = $('<button type="button" data-id=\"' + menu[x].id + '\"data-name=\"' + menu[x].Name + '\"data-price=' +
-            menu[x].Price + '>ADD</button>').addClass("addbtn"+menu[x].id);
+        let item13 = $('<button type="button" data-id=\"' + itemlist[x].id + '\"data-name=\"' + itemlist[x].Name + '\"data-price=' +
+            itemlist[x].Prices + '>ADD</button>').addClass("addbtn"+itemlist[x].id);
 
         item12.append(item13);
-        let item14 = $('<div></div>').addClass("plus" + menu[x].id);
+        let item14 = $('<div></div>').addClass("plus" + itemlist[x].id);
         item12.append(item14);
 
         let item21 = $("<div></div>").addClass("input-group");
@@ -328,13 +229,9 @@ function main_menu() {
     }
 }
 
-
-
 main_menu();
 
-
 // Add item
-
 $('.addbtn1').click(function (event) {
     event.preventDefault();
     var name = $(this).data('name');
@@ -376,11 +273,10 @@ $('.addbtn4').click(function (event) {
 });
 
 
-
-
 //Display Cart 
 function displayCart() {
     var cartArray = shoppingCart.listCart();
+    console.log(cartArray);
     var output = "<h1>CART</h1>";
     var out = '';
     for (var i in cartArray) {
@@ -401,15 +297,15 @@ function displayCart() {
 
     //Displaying itemlist holder
 
-    for (k in menu) {
+    for (var k in itemlist) {
         for (var j in cartArray) {
-            if (menu[k].Name === cartArray[j].name) {
+            if (itemlist[k].Name === cartArray[j].name) {
                 out = "<div class='input-group'><button class='minus-item input-group-addon btn btn-primary' data-name=\"" + cartArray[j].name + "\">-</button>"
                     + "<input type='number' class='item-count form-control numberstyle' data-name=\"" + cartArray[j].name + "\"' value='" + cartArray[j].count + "'>"
                     + "<button class='plus-item btn btn-primary input-group-addon' data-name=\"" + cartArray[j].name + "\">+</button></div>";
                 if (cartArray[j].count > 0) {
-                    $('.plus' + menu[k].id).html(out);
-                    $('.addbtn'+menu[k].id).hide();
+                    $('.plus' + itemlist[k].id).html(out);
+                    $('.addbtn'+itemlist[k].id).hide();
                 }   
                 }
             }
@@ -464,7 +360,7 @@ $('.m41,.plus1,.plus2,.plus3,.plus4').on("change", ".item-count", function (even
 
 //Implementing Search filter
 
-  function searchFilter(){
+function searchFilter(){
     let ele=document.getElementById('dishes');
     ele.addEventListener('input',function(){
      let itemLists=document.getElementsByClassName('first');
